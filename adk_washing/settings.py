@@ -133,5 +133,8 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')import django_heroku
-django_heroku.settings(locals()) django_heroku.settings(locals())
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+import django_heroku
+django_heroku.settings(locals()) 
+
