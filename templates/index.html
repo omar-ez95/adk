@@ -1,0 +1,338 @@
+{% load static %}
+<!doctype html> {% load static %}
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <meta http-equiv="Content-Security-Policy" content="Content-Security-Policy: default-src 'self' *.googleapis.com">
+    <!-- Style CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="{% static 'css/profile.css' %}" type="text/css"> -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine" type="text/css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cabin+Sketch:wght@400;700&family=Fredericka+the+Great&family=Thasadith&family=Yomogi&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Allura&family=Poiret+One&family=Sacramento&display=swap" rel="stylesheet">
+    <title>Profile</title>
+</head>
+<style>
+  * {
+    box-shadow: none;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: #d1dad3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 17px;
+}
+
+.container {
+    max-width: 1000px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.switch-holder {
+    display: flex;
+    padding: 10px 20px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    /* box-shadow: -8px -8px 15px rgba(255,255,255,.7),
+                10px 10px 10px rgba(0,0,0, .3),
+                inset 8px 8px 15px rgba(255,255,255,.7),
+                inset 10px 10px 10px rgba(0,0,0, .3); */
+    justify-content: space-between;
+    align-items: center;
+}
+
+.switch-label {
+    width: 250px;
+}
+
+.switch-label i {
+    margin-right: 5px;
+}
+
+.switch-toggle {
+    height: 40px;
+}
+
+.switch-toggle input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+    z-index: -2;
+}
+
+.switch-toggle input[type="checkbox"] + label {
+    position: relative;
+    display: inline-block;
+    width: 100px;
+    height: 40px;
+    border-radius: 20px;
+    margin: 0;
+    cursor: pointer;
+    box-shadow: inset -8px -8px 15px rgba(255,255,255,.6),
+                inset 10px 10px 10px rgba(0,0,0, .25);
+    
+}
+
+.switch-toggle input[type="checkbox"] + label::before {
+    position: absolute;
+    content: 'OFF';
+    font-size: 13px;
+    text-align: center;
+    line-height: 25px;
+    top: 8px;
+    left: 8px;
+    width: 45px;
+    height: 25px;
+    border-radius: 20px;
+    background-color: #00b33c8f;
+    box-shadow: -3px -3px 5px rgba(255,255,255,.5),
+                3px 3px 5px #00b33c;
+
+    transition: .3s ease-in-out;
+}
+
+.switch-toggle input[type="checkbox"]:checked + label::before {
+    left: 50%;
+    content: 'ON';
+    color: #fff;
+    background-color: #a51e1e83;
+    box-shadow: -3px -3px 5px rgba(255,255,255,.5),
+                3px 3px 5px #a51e1ea6;
+
+}
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.switch input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+.row{
+  flex-direction: row;
+  width: 90%;
+  margin: auto;
+}
+.container{
+  /* margin-top: 200px; */
+}
+</style>
+</head>
+
+
+
+
+
+
+
+<body style="background-color:#1B1B1B !important;">
+  
+    <div style="margin-top: 100px;"class="">
+      <h3 style="color: white;">ADK Washing room </h3>
+        
+            <div class="col-xs-12  card " style="background-color:#1B1B1B !important; margin-top: 50px; padding: 30px;">
+              <div class="row">
+                <div class="col-xs-12 col-sm-6 col-md-6">
+                  <h3 style="color:white;">Washing Machines </h3>
+                  {% for i in  washing%}
+                  {% if i.on == True %}
+                  <div class="switch-holder" style="background-color: #ce4f4fc4;">
+                    <div class="switch-label">
+                        <i class="fa fa-bluetooth-b"></i><span>{{i.name}} besetzt</span>
+                    </div>
+                    <div class="switch-toggle">
+                      <a href="{% url 'turnWashing' i.id %}" class="add_user">
+                        <input type="checkbox"  checked>
+                        <label for={{i.name}}></label>
+                      </a>
+      
+                    </div>
+          
+        </div>
+                      {% else %}
+                      <div class="switch-holder"  style="background-color: #00b33ca9;">
+                        <div class="switch-label">
+                            <i class="fa fa-bluetooth-b"></i><span>{{i.name}} free</span>
+                        </div>
+                        <div class="switch-toggle">
+                          <a href="{% url 'turnWashing' i.id %}" class="add_user">
+                            <input type="checkbox"  >
+                            <label for={{i.name}}></label>
+                          </a>
+          
+                        </div>
+                    </div>
+      
+                      {% endif %}
+      
+                  </label>
+                  {% endfor %}
+                  <hr/>
+
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-6">
+                  <h3 style="color:white;">Dryers </h3>
+                {% for i in  dryer%}
+                    {% if i.on == True %}
+                    <div class="switch-holder" style="background-color: #ce4f4fc4;">
+                      <div class="switch-label">
+                          <i class="fa fa-bluetooth-b"></i><span>{{i.name}} besetzt</span>
+                      </div>
+                      <div class="switch-toggle">
+                        <a href="{% url 'turndryer' i.id %}" class="add_user">
+                          <input type="checkbox"checked>
+                          <label for={{i.name}}></label>
+                        </a>
+        
+                      </div>
+          </div>
+                    {% else %}
+
+                    <div class="switch-holder"  style="background-color: #00b33ca9;">
+                      <div class="switch-label">
+                          <i class="fa fa-bluetooth-b"></i><span>{{i.name}} free</span>
+                      </div>
+                      <div class="switch-toggle">
+                        <a href="{% url 'turndryer' i.id %}" class="add_user">
+                          <input type="checkbox"  >
+                          <label for={{i.name}}></label>
+                        </a>
+        
+                      </div>
+                  </div>
+
+
+                    
+                    {% endif %}
+
+                {% endfor %}
+              </div>
+
+        </div>
+        
+        
+      </div>
+        
+    </div>
+                            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script type="text/javascript">
+        $(function(){
+          $("#update_log_button").click(function(){
+            $.ajax({
+                    type: 'GET',
+                    url: '/'+id,
+                    data: {
+                        'csrfmiddlewaretoken': $('input[name=csrfmiddlewaretoken]').val(),
+                    },
+                    success: function(response) {
+                        alert('succes')
+                    },
+                    error: function(response) {
+                        console.log('error', response)
+                    }
+                });
+              return false;
+          });
+       });
+      </script>
+      
+    
+      <scripty type="text/javascript">
+        
+      </scripty>
+
+    <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+
+
+  
+
+    
+</body>
+
+</html>
